@@ -18,7 +18,7 @@ let tail = function (array) {
   //slice returns a new array containing a portion of the original array. In this case, array.slice(1) returns a new array that starts from the second element of the array parameter.
 };
 
-console.log('Tail is: ' + tail([]));
+console.log('Tail is: ' + tail(["Hello", "Lighthouse", "Labs"]));
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
 
