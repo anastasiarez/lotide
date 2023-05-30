@@ -16,7 +16,7 @@ const findKey = (object, callback) => {
   const keys = Object.keys(object);
 
   for (const item of keys) {
-    if (callback(object[item])) {
+    if (callback(object[item])) { //invoke the callback function with the value of object[item] and compare the result with true.
       return item;
     }
   } 
@@ -39,4 +39,4 @@ assertEqual(findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2), "noma");
+}, x => x.stars === 2), "noma"); //In this code, the assertEqual function is called with the result of findKey as the actual parameter and the expected value "noma" as the expected parameter. 
