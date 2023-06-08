@@ -1,8 +1,10 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
 
-console.log(middle([]))
-console.log(middle([1]))
-console.log(middle([1, 2]))
-console.log(middle([1, 2, 3]))
-console.log(middle([1, 2, 3, 4]))
-console.log(middle([1, 2, 3, 4, 5]))
+describe("#middle", () => {
+  it("returns middle element/s of the array", () => {
+    const inputArray = [1, 2, 3, 4, 5];
+    const expectedOutput = [3];
+    assert.deepEqual(middle(inputArray), expectedOutput);
+  });
+});

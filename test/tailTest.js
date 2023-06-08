@@ -1,7 +1,10 @@
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-console.log('Tail is: ' + tail(["Hello", "Lighthouse", "Labs"]));
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
+describe("#tail", () => {
+  it("returns every element except the head (first element) of the array", () => {
+    const inputArray = ["Yo Yo", "Lighthouse", "Labs"];
+    const expectedOutput = ["Lighthouse", "Labs"];
+    assert.deepEqual(tail(inputArray), expectedOutput);
+  });
+});

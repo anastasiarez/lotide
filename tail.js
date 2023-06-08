@@ -9,6 +9,7 @@ let tail = function(array) {
   return array.slice(1);
 
 };
+
 //slice returns a new array containing a portion of the original array. In this case, array.slice(1) returns a new array that starts from the second element of the array parameter.
 
 
