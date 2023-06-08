@@ -3,6 +3,7 @@
 
 //To check if two arrays have the same values, we can use the JSON.stringify() method to convert the arrays to strings and then compare the strings.
 
+
 const assertArraysEqual = function (array1, array2) {
   if (JSON.stringify(array1) === JSON.stringify(array2)) {
 
@@ -13,5 +14,6 @@ const assertArraysEqual = function (array1, array2) {
   }
 };
 
-assertArraysEqual([12, 1, 1], [1, 1, 1])
+
+module.exports = assertArraysEqual;
 

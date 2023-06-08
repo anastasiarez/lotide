@@ -3,24 +3,6 @@
 //For arrays with odd number of elements, an array containing a single middle element should be returned.
 //For arrays with an even number of elements, an array containing the two elements in the middle should be returned
 
-// TEST/ASSERTION FUNCTIONS
-
-const eqArrays = function (array1, array2) {
-  if (JSON.stringify(array1) === JSON.stringify(array2)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-const assertArraysEqual = function (array1, array2) {
-  if (JSON.stringify(array1) === JSON.stringify(array2)) {
-    console.log(`💚 Assertion Passed: ${JSON.stringify(array1)} === ${JSON.stringify(array2)}`);
-  } else {
-    console.log(`🔴 Assertion Failed: ${JSON.stringify(array1)} !== ${JSON.stringify(array2)}`);
-  }
-};
-
 // MIDDLE FUNCTION
 
 function middle(array) {
@@ -45,9 +27,4 @@ function middle(array) {
   return [singleElem]
 }
 
-console.log(middle([]))
-console.log(middle([1]))
-console.log(middle([1, 2]))
-console.log(middle([1, 2, 3]))
-console.log(middle([1, 2, 3, 4]))
-console.log(middle([1, 2, 3, 4, 5]))
+module.exports = middle;
