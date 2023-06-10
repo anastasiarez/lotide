@@ -28,6 +28,8 @@ const results = map(words, word => word[0]); // --> word => word[0] is a cb f-n
 
 assertEqual(results.join(','), 'g,c,t,m,S');
 
-// // This converts the results array to a string by joining its elements with commas and then compares it with the expected string.
+
+
+// This converts the results array to a string by joining its elements with commas and then compares it with the expected string.
 
 module.exports = map;

@@ -14,7 +14,7 @@ const eqObjects = function(object1, object2) {
   const arrayKeys1 = Object.keys(object1);
   const arrayKeys2 = Object.keys(object2);
 
-  // get keys from objects and make an array --> ['colours', 'size']
+  // get keys from objects and makes an array --> ['colours', 'size']
 
   if (arrayKeys1.length !== arrayKeys2.length) {
     return false;
@@ -61,5 +61,6 @@ const longSleeveMultiColorShirtObject =
 
 
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+assertEqual(eqObjects(anotherMultiColorShirtObject, longSleeveMultiColorShirtObject), false);
 
 module.exports = eqObjects;

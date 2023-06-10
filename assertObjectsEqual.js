@@ -5,26 +5,6 @@
  */
 
 
-// 1) THIS F-N COMPARES PRIMITIVE DATA AS VALUES
-
-const assertEqual = require('./assertEqual');
-
-
-
-// 2) THIS F-N COMPARES ARRAYS AS VALUES
-
-const eqArrays = require('./eqArrays');
-
-
-
-// 3) THIS F-N COMPARES OBJECTS WITH ARRAYS IN IT
-
-const eqObjects = require('./eqObjects');
-
-
-
-// 4) THIS F-N COMPARES WHOLE OBJECTS AS VALUES 
-
 const assertObjectsEqual = (obj_1, obj_2) => {
 
   const inspect = require('util').inspect;

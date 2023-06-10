@@ -32,7 +32,7 @@ const letterPositions = (sentence) => {
 
 assertArraysEqual(letterPositions("lighthouse in the house").e, [9, 16, 22]);
 
-
+//SECOND OPTION
 
 const letterPositions_2 = (sentence) => {
   const results = [];
