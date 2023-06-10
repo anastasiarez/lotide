@@ -4,13 +4,7 @@
  * If no key is found, then it should return undefined.
  */
 
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`💚 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const findKey = (object, callback) => {
   const keys = Object.keys(object);
@@ -23,20 +17,15 @@ const findKey = (object, callback) => {
   return undefined;
 }
 
-console.log(findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 2)) // => "noma"
-
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
+  "findKey":      { stars: 2 },
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2), "noma"); //In this code, the assertEqual function is called with the result of findKey as the actual parameter and the expected value "noma" as the expected parameter. 
+}, x => x.stars === 2), "findKey"); 
+
+//In this code, the assertEqual function is called with the result of findKey as the actual parameter and the expected value "noma" as the expected parameter. 
+
+module.exports = findKey;

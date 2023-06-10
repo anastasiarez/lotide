@@ -7,27 +7,10 @@
  * The value for each key in one object is the same as the value for that same key in the other object
  */
 
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`💚 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
-
-const eqArrays = function (array1, array2) {
-  if (JSON.stringify(array1) === JSON.stringify(array2)) {
-
-    //To check if two arrays have the same values, we can use the JSON.stringify() method to convert the arrays to strings and then compare the strings.
-
-    return true;
-  } else {
-    return false;
-  }
-}
-
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   const arrayKeys1 = Object.keys(object1);
   const arrayKeys2 = Object.keys(object2);
 
@@ -39,22 +22,23 @@ const eqObjects = function (object1, object2) {
 
   for (let key of arrayKeys1) {
     const value1 = object1[key]; // --> an array
-    const value2 = object2[key] // --> "medium"
+    const value2 = object2[key]; // --> "medium"
 
     if (Array.isArray(value1)) {
       if (!eqArrays(value1, value2)) {
-        return false;} 
+        return false;
+      }
 
       // It should return false immediately when a property value mismatch is found (clasing bracket after false;}). Otherwise, it will continue the loop even after finding a mismatch, which will lead to incorrect results.
-        
-      } else {
-        if (value1 !== value2) {
-          return false;
-        }
+
+    } else {
+      if (value1 !== value2) {
+        return false;
       }
     }
-    return true;
-  };
+  }
+  return true;
+};
 
 const multiColorShirtObject =
 {
@@ -76,8 +60,6 @@ const longSleeveMultiColorShirtObject =
 };
 
 
-console.log(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject)); // => false
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
 
-console.log(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject));// --> true
-assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
+module.exports = eqObjects;

@@ -5,26 +5,23 @@
 
 // MIDDLE FUNCTION
 
+const assertEqual = require('./assertEqual');
+
 function middle(array) {
-  const shortArray = array.length === 1 || array.length === 2;
-  if (shortArray) {
+  const length = array.length;
+  if (length === 0 || length === 1) {
     return [];
   }
 
-  const middleIndex = array.length / 2;
+  const middleIndex = Math.floor(length / 2);
 
-  if (Number.isInteger(middleIndex)) {
-    const firstElem = array[middleIndex - 1];
-
-    //seecond index is number 3. We need to return 2 & 3. So we -1 index to get 2
-
-    const secondElem = array[middleIndex]
-    return [firstElem, secondElem]
+  if (length % 2 === 0) {
+    return [array[middleIndex - 1], array[middleIndex]];
+  } else {
+    return [array[middleIndex]];
   }
-
-  const roundedIndex = Math.floor(middleIndex) // 5/2 = 2.5 Math.floor --> 3
-  const singleElem = array[roundedIndex]
-  return [singleElem]
 }
+
+assertEqual(middle([1, 2, 'middle', 4, 5]), ['middle']);
 
 module.exports = middle;

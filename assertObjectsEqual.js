@@ -7,51 +7,21 @@
 
 // 1) THIS F-N COMPARES PRIMITIVE DATA AS VALUES
 
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`💚 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
+
+
 
 // 2) THIS F-N COMPARES ARRAYS AS VALUES
 
-const eqArrays = function (array1, array2) {
-  if (JSON.stringify(array1) === JSON.stringify(array2)) {
-    return true;
-  } else {
-    return false;
-  }
-}
+const eqArrays = require('./eqArrays');
+
+
 
 // 3) THIS F-N COMPARES OBJECTS WITH ARRAYS IN IT
 
-const eqObjects = function (object1, object2) {
-  const arrayKeys1 = Object.keys(object1);
-  const arrayKeys2 = Object.keys(object2);
+const eqObjects = require('./eqObjects');
 
-  if (arrayKeys1.length !== arrayKeys2.length) {
-    return false;
-  }
 
-  for (let key of arrayKeys1) {
-    const value1 = object1[key]; // --> an array
-    const value2 = object2[key] // --> "medium"
-
-    if (Array.isArray(value1)) {
-      if (!eqArrays(value1, value2)) {
-        return false;
-      }
-
-    } else {
-      if (value1 !== value2) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
 
 // 4) THIS F-N COMPARES WHOLE OBJECTS AS VALUES 
 
@@ -72,15 +42,18 @@ const assertObjectsEqual = (obj_1, obj_2) => {
   if (obj_1String === obj_2String) {
 
     console.log(`💚 Assertion Passed: ${inspect(obj_1)} === ${inspect(obj_2)}`);
-    
+
   } else {
 
     console.log(`🔴 Assertion Failed: ${inspect(obj_1)} !== ${inspect(obj_2)}`);
   }
 };
 
-const obj_1 = { fruit: 'cherry', colour: 'red'};
-const obj_2 = { fruit: 'orange', colour: 'yellow'};
-  
+const obj_1 = { fruit: 'cherry', colour: 'red' };
+const obj_2 = { fruit: 'cherry', colour: 'red' };
+
+
 assertObjectsEqual(obj_1, obj_2);
 
+
+module.exports = assertObjectsEqual;
