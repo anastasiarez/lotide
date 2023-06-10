@@ -1,7 +1,8 @@
 {
-  "name": "lotide",
+  "anastasiia.ua/lotide": "lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library. This project was created and published by me as part of my learnings at Lighthouse Labs. ",
+
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/anastasiarez/lotide.git"
   },
-  "author": "",
+  "author": "Anastasiia Reznichenko, anastasiia.rn@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anastasiarez/lotide/issues"

@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 const assertArraysEqual = require('./assertArraysEqual');
 
 //For each letter, instead of returning just one number to represent its number of occurrences, multiple numbers may be needed to represent all the places in the string that it shows up.

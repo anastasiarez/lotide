@@ -1,7 +1,7 @@
 
 // allNamesArray: an array of strings that we need to look through
 // namesToCount: an object specifying what to count
-//The function should report back how many instances of each string were found in the allNamesArray  of strings.
+//The function should report back how many instances of each string were found in the allNamesArray of strings.
 
 const assertEqual = require('./assertEqual');
 

@@ -1,3 +1,5 @@
+//function takes a sentence as input and counts the occurrences of each letter in the sentence
+
 const assertEqual = require('./assertEqual');
 
 
